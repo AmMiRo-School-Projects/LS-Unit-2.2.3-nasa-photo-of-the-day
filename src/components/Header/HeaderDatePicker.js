@@ -5,11 +5,7 @@ function DatePick() {
   const [startDate, setStartDate] = useState(new Date());
   console.log(startDate);
   return (
-    <DatePicker
-      dateFormat="yyyy/MM/dd"
-      selected={startDate}
-      onChange={date => setStartDate(date)}
-    />
+    <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
   );
 }
 

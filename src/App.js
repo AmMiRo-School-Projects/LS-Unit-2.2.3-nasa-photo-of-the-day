@@ -4,16 +4,22 @@ import Header from "./components/Header/HeaderCard";
 import logo from "./assets/nasa-logo.png";
 import ImgCard from "./components/ImgSection/ImgCard";
 import Footer from "./components/Footer/Footer";
+import styled from "styled-components";
 import "./App.css";
 
+const AppDiv = styled.div`
+  max-width: 100%;
+  background-image: url({nasaData.hdurl});
+`;
+
 function App() {
-  const [nasaData, setNasaData] = useState();
-  const [date, setDate] = useState;
+  var [nasaData, setNasaData] = useState();
+  // const [date, setDate] = useState();
   useEffect(() => {
     axios
-      .get
-      // "https://api.nasa.gov/planetary/apod?api_key=Tn29fbPFU60KjrekRWjh1encJfdOiKXfPb3Q0KQX"
-      ()
+      .get(
+        "https://api.nasa.gov/planetary/apod?api_key=Tn29fbPFU60KjrekRWjh1encJfdOiKXfPb3Q0KQX"
+      )
       .then(response => {
         console.log(response);
         setNasaData(response.data);
@@ -23,11 +29,11 @@ function App() {
       });
   }, []);
   return (
-    <div className="App">
+    <AppDiv className="App">
       <Header logo={logo} />
       <ImgCard nasaData={nasaData} />
       <Footer />
-    </div>
+    </AppDiv>
   );
 }
 
