@@ -1,10 +1,14 @@
 import React from "react";
+import HeaderDatePicker from "./HeaderDatePicker";
 
-function Header() {
+function Header(props) {
   return (
     <div className="App-header">
-      <img src="./assest/nasa-logo.png" alt="NASA logo" />
+      <div className="logo-wrapper">
+        <img src={props.logo} alt="NASA logo" />
+      </div>
       <h1>Astronomy Picture of the Day</h1>
+      {/* <div className="date-picker"><HeaderDatePicker /></div> */}
     </div>
   );
 }
