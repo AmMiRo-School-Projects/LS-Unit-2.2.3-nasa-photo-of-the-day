@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderDatePicker from "./HeaderDatePicker";
+// import HeaderDatePicker from "./HeaderDatePicker";
 import styled from "styled-components";
 
 const HeaderDiv = styled.div`
@@ -30,10 +30,7 @@ function Header(props) {
         <LogoImg src={props.logo} alt="NASA logo" />
         <h1>Astronomy Picture of the Day</h1>
       </LogoDiv>
-
-      {/* <div className="date-picker">
-        <HeaderDatePicker className="date-picker" />
-      </div> */}
+      {/* <HeaderDatePicker className="date-picker" /> */}
     </HeaderDiv>
   );
 }
